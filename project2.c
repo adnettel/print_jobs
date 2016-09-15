@@ -44,15 +44,9 @@ int main() {
     		continue;
     	}
 
-    	//printf("CREATING NEW NODE \n");
-
     	struct node *new = newNode(list, dataToAdd, priorityToAdd);
 
-    	//printf("ADDING NODE TO END \n");
-
     	list = addNodeToEnd(list, new);
-
-    	//printf("SUCCESS \n");
 
 	}
 
@@ -82,16 +76,13 @@ struct node *addNodeToEnd(struct node *list, struct node *nodeToAdd) {
 	// If list is empty, simply point to new node.
 	// Else, find last node and set its next to the new node.
 	if (list == NULL) {
-		//printf("LIST WAS NULL. ADDING NODE. \n");
 		list = nodeToAdd;
-		//printf("SUCCESS ADDING NODE. \n");
 	} else {
 
 		struct node *p = list;
 		while (1) {
 
 			if (p->next == NULL) {
-				//printf("ADDING TO END \n");
 				p->next = nodeToAdd;
 				break;
 			}
